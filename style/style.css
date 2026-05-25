@@ -1,35 +1,301 @@
-/* style.css: layout geral e componentes */
+/* ==========================================================================
+   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
 :root {
-  --accent: #0b3a2e;
-  --muted: #6b6b6b;
-  --surface: #f7f7f7;
-  --card: #ffffff;
-  --max-width: 1100px;
-  --radius: 10px;
+  --color-green-dark: #0b3a2e;    /* Verde institucional */
+  --color-green-light: #4a7c59;   /* Verde das tags */
+  --color-bg-page: #f4efe6;       /* Fundo bege geral */
+  --color-bg-card: #fdfbf7;       /* Fundo do bloco de texto (claro) */
+  --color-accent: #bc8034;        /* Laranja/Marrom do botão principal */
+  --color-text-dark: #232323;     /* Texto principal */
+  --color-text-muted: #606060;    /* Textos secundários */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
+  --transition: all 0.3s ease;
 }
-*{box-sizing:border-box}
-body{
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:#0b2430;
-  background: linear-gradient(180deg,#f7fbf7, #fff);
-  margin:0;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.45;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-main{max-width:var(--max-width);margin:1.4rem auto;padding:0 1rem}
-.hero-section{display:flex;align-items:center;gap:1rem;padding:2rem 0}
-.hero-shell{display:flex;gap:1.2rem;align-items:stretch}
-.hero-copy{flex:1}
-.hero-visual{width:360px}
-.hero-image-card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 24px rgba(11,58,46,0.06)}
-.hero-image-card img{width:100%;display:block}
-.section-heading{margin-bottom:.8rem}
-.surface-block{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 16px rgba(0,0,0,0.04)}
-.process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-.process-card{padding:1rem}
-.carousel-wrapper{position:relative;display:flex;align-items:center;gap:1rem}
-.carousel-slide{flex:1;min-height:220px;background:linear-gradient(180deg,#eef6f0,#fff);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.carousel-btn{position:relative;background:transparent;border:none;font-size:1.6rem;padding:.35rem}
-.gallery-block{display:flex;flex-direction:column;gap:.8rem}
-.info-box{display:flex;flex-direction
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO / HEADER (Fundo Verde Escuro)
+   ========================================================================== */
+.header {
+  background-color: var(--color-green-dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 24px;
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo img {
+  height: 45px;
+  display: block;
+}
+
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+/* Botão Explorar */
+.nav-more-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-more-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Menu Oculto por Padrão (será acionado pelo script) */
+.nav-links, .nav-more-panel {
+  display: none; 
+}
+
+/* Ocultar hambúrguer no desktop */
+.hamburger {
+  display: none;
+}
+
+/* ==========================================================================
+   3. SEÇÃO HERO (O Layout de Duas Colunas)
+   ========================================================================== */
+.hero-section {
+  padding: 40px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-shell {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: stretch; /* Faz as duas colunas terem a mesma altura */
+}
+
+/* --- COLUNA ESQUERDA: Bloco de Texto --- */
+.hero-copy {
+  flex: 1.2; /* Ganha um pouco mais de espaço na largura */
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--color-green-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.hero-copy h1 {
+  font-size: 2.4rem;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.hero-copy p {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.hero-copy strong {
+  color: var(--color-green-dark);
+}
+
+/* Botões de Ação */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0 40px 0;
+}
+
+.action-btn {
+  background-color: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.action-btn:hover {
+  background-color: #a36d2a;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  padding: 14px 28px;
+  border: 1px solid #dcd7cd;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.secondary-btn:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-color: #c5beae;
+}
+
+/* Mini Cards Inferiores (Campo, Tecnologia, Futuro) */
+.hero-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: 1px solid #f0eae1;
+  padding-top: 32px;
+}
+
+.hero-point {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-point strong {
+  font-size: 1.05rem;
+  color: var(--color-text-dark);
+}
+
+.hero-point span {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* --- COLUNA DIREITA: Bloco da Imagem --- */
+.hero-visual {
+  flex: 1;
+  display: flex;
+}
+
+.hero-image-card {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden; /* Garante que a imagem siga as bordas arredondadas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem sem distorcer */
+  display: block;
+}
+
+/* Texto escuro flutuando sobre a imagem */
+.hero-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
+  padding: 40px 32px 32px 32px;
+  color: white;
+}
+
+.hero-image-overlay span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-image-overlay strong {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  display: block;
+}
+
+/* ==========================================================================
+   4. BOTÃO FIXO DE ACESSIBILIDADE
+   ========================================================================== */
+.accessibility-fixed {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #386641;
+  color: white;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 2000;
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE (Para Celular e Telas Menores)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-shell {
+    flex-direction: column; /* Transforma as colunas em linhas no celular */
+  }
+  
+  .hero-points {
+    grid-template-columns: 1fr; /* Mini cards empilhados no mobile */
+    gap: 20px;
+  }
+  
+  .hero-copy {
+    padding: 32px 24px;
+  }
+  
+  .hero-image-card {
+    height: 400px; /* Define uma altura fixa para a imagem no mobile */
+  }
+}
