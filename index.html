@@ -1,72 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do Campo ao Copo: A Jornada do Malte em Guarapuava</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/header.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRO_CORE // O Futuro do Cultivo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo">
-        <img src="./img/ProgramacaoParana_logo-vertical-mono-branca.png" alt="Logo" style="background:#0b3a2e; padding:5px; border-radius:4px;">
-      </div>
-      <div class="site-title">Do Campo ao Copo: A Jornada do Malte em Guarapuava</div>
-
-      <nav class="navbar" aria-label="Navegação principal">
-        <div class="nav-desktop">
-          <div class="nav-more">
-            <button class="nav-more-btn" id="nav-more-btn" type="button" aria-expanded="false" aria-controls="nav-more-panel">
-              <span>Explorar</span>
-              <span class="nav-more-arrow" aria-hidden="true">▾</span>
-            </button>
-            <div class="nav-more-panel" id="nav-more-panel" hidden>
-              <a href="#jornada">Jornada</a>
-              <a href="#galeria">Galeria</a>
-              <a href="#curiosidades">Curiosidades</a>
-              <a href="#quiz">Quiz</a>
-              <a href="#sustentabilidade">Sustentabilidade</a>
-              <a href="#video">Vídeo</a>
-              <a href="#hq">HQ</a>
-              <a href="#contato">Contato</a>
-            </div>
-          </div>
+    <div class="accessibility-bar" role="toolbar" aria-label="Ferramentas de Acessibilidade">
+        <span class="system-status">SYS_STATUS: ONLINE</span>
+        <div class="font-controls">
+            <button id="decrease-font" aria-label="Diminuir tamanho do texto" title="Diminuir Fonte">-A</button>
+            <button id="reset-font" aria-label="Resetar tamanho do texto" title="Resetar Fonte">A</button>
+            <button id="increase-font" aria-label="Aumentar tamanho do texto" title="Aumentar Fonte">+A</button>
         </div>
-
-        <button class="hamburger" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-links" aria-expanded="false">
-          ☰
-        </button>
-
-        <ul class="nav-links" id="nav-links" hidden>
-          <li><a href="#jornada">Jornada</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#curiosidades">Curiosidades</a></li>
-          <li><a href="#quiz">Quiz</a></li>
-          <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-          <li><a href="#video">Vídeo</a></li>
-          <li><a href="#hq">HQ</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
     </div>
-  </header>
 
-  <main>
-    
-    <section class="hero-section">
-      <div class="hero-shell">
-        <div class="hero-copy">
-          <span class="accessibility-badge" style="display:inline-block; background:#0b3a2e; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem; margin-bottom:1rem;">A+</span>
-          <h1>Do campo ao copo</h1>
-          <h2>Agro forte, futuro sustentável em cada etapa da jornada do malte</h2>
-          <p>
-            Da cevada cultivada no campo ao malte que movimenta a indústria e chega à cidade,
-            esta cadeia produtiva mostra como produção, tecnologia e cuidado ambiental podem caminhar juntos.
-          </p>
-          
-          <div class="hero-actions">
-            <a class="action-btn" href="#jornada" style="display:inline-block; background:#0b3a2e; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; margin-right:10px;">Conhecer a jornada</a>
-            <a class="secondary-btn" href="#sustentabilidade"
+    <header class="cyber-header">
+        <div class="logo">AGRO<span>_CORE</span></div>
+        <nav>
+            <a href="#tech">Tecnologia</a>
+            <a href="#cultivos">Bio-Dutos</a>
+            <a href="#dashboard">Painel</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="tech">
+            <div class="hero-content">
+                <span class="tag">CONEXÃO BIO-DIGITAL</span>
+                <h1>Cultivando o Amanhã com <br><span class="neon-text">Luz e Código</span></h1>
+                <p>Automatização de safras verticais com inteligência artificial e monitoramento quântico de solo.</p>
+                <button class="cyber-btn">Iniciar Sincronia</button>
+            </div>
+            <div class="hero-grid-effect"></div>
+        </section>
+
+        <section class="features" id="cultivos">
+            <div class="card">
+                <div class="card-edge"></div>
+                <h3>Hidroponia 4.0</h3>
+                <p>Nutrição molecular controlada por algoritmos preditivos em tempo real.</p>
+            </div>
+            <div class="card">
+                <div class="card-edge"></div>
+                <h3>Drones de Polinização</h3>
+                <p>Micro-drones autônomos com sensores de calor e mapeamento floral.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,301 +1,180 @@
-/* ==========================================================================
-   1. VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
-   ========================================================================== */
+/* Variáveis com a paleta Cyber-Agro (Verdes Neon + Escuros Tecnológicos) */
 :root {
-  --color-green-dark: #0b3a2e;    /* Verde institucional */
-  --color-green-light: #4a7c59;   /* Verde das tags */
-  --color-bg-page: #f4efe6;       /* Fundo bege geral */
-  --color-bg-card: #fdfbf7;       /* Fundo do bloco de texto (claro) */
-  --color-accent: #bc8034;        /* Laranja/Marrom do botão principal */
-  --color-text-dark: #232323;     /* Texto principal */
-  --color-text-muted: #606060;    /* Textos secundários */
-  --radius-lg: 24px;
-  --radius-md: 16px;
-  --radius-sm: 8px;
-  --transition: all 0.3s ease;
+    --bg-base: #0a0f0d;
+    --bg-surface: #121a16;
+    --neon-green: #39ff14;
+    --cyber-cyan: #00f3ff;
+    --text-primary: #e0ebd7;
+    --text-muted: #809a86;
+    --border-color: #1f3a2b;
+    
+    /* Base para acessibilidade */
+    --font-scale: 100%;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* Toque hacker/industrial */
+}
+
+html {
+    font-size: var(--font-scale);
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--color-bg-page);
-  color: var(--color-text-dark);
-  line-height: 1.6;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+    background-size: 50px 50px; /* Grid Cyberpunk no fundo */
 }
 
-/* ==========================================================================
-   2. CABEÇALHO / HEADER (Fundo Verde Escuro)
-   ========================================================================== */
-.header {
-  background-color: var(--color-green-dark);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 12px 24px;
+/* Barra de Acessibilidade */
+.accessibility-bar {
+    background: #000;
+    border-bottom: 2px solid var(--neon-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
 }
 
-.header-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+.system-status {
+    color: var(--cyber-cyan);
+    text-shadow: 0 0 5px var(--cyber-cyan);
 }
 
-.logo img {
-  height: 45px;
-  display: block;
+.font-controls button {
+    background: transparent;
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 0.2rem 0.6rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.site-title {
-  font-size: 1.1rem;
-  font-weight: 500;
-  flex-grow: 1;
-  margin-left: 10px;
+.font-controls button:hover {
+    background: var(--neon-green);
+    color: #000;
+    box-shadow: 0 0 10px var(--neon-green);
 }
 
-/* Botão Explorar */
-.nav-more-btn {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  transition: var(--transition);
+/* Header */
+.cyber-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(18, 26, 22, 0.8);
+    backdrop-filter: blur(10px);
 }
 
-.nav-more-btn:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-/* Menu Oculto por Padrão (será acionado pelo script) */
-.nav-links, .nav-more-panel {
-  display: none; 
+.logo span {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
 }
 
-/* Ocultar hambúrguer no desktop */
-.hamburger {
-  display: none;
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
 }
 
-/* ==========================================================================
-   3. SEÇÃO HERO (O Layout de Duas Colunas)
-   ========================================================================== */
-.hero-section {
-  padding: 40px 24px;
-  max-width: 1400px;
-  margin: 0 auto;
+nav a:hover {
+    color: var(--cyber-cyan);
 }
 
-.hero-shell {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  align-items: stretch; /* Faz as duas colunas terem a mesma altura */
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* --- COLUNA ESQUERDA: Bloco de Texto --- */
-.hero-copy {
-  flex: 1.2; /* Ganha um pouco mais de espaço na largura */
-  background-color: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  padding: 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.tag {
+    color: var(--cyber-cyan);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    display: block;
+    margin-bottom: 1rem;
 }
 
-.eyebrow {
-  display: inline-block;
-  color: var(--color-green-light);
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 16px;
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
 }
 
-.hero-copy h1 {
-  font-size: 2.4rem;
-  color: var(--color-text-dark);
-  line-height: 1.2;
-  margin-bottom: 24px;
-  font-weight: 800;
+.neon-text {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px var(--neon-green);
 }
 
-.hero-copy p {
-  color: var(--color-text-muted);
-  font-size: 1.05rem;
-  margin-bottom: 16px;
+p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
-.hero-copy strong {
-  color: var(--color-green-dark);
+.cyber-btn {
+    background: transparent;
+    border: 1px solid var(--cyber-cyan);
+    color: var(--cyber-cyan);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
 }
 
-/* Botões de Ação */
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  margin: 24px 0 40px 0;
+.cyber-btn:hover {
+    background: var(--cyber-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--cyber-cyan);
 }
 
-.action-btn {
-  background-color: var(--color-accent);
-  color: white;
-  text-decoration: none;
-  padding: 14px 28px;
-  border-radius: var(--radius-sm);
-  font-weight: bold;
-  font-size: 0.95rem;
-  transition: var(--transition);
+/* Cards Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.action-btn:hover {
-  background-color: #a36d2a;
+.card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s;
 }
 
-.secondary-btn {
-  background-color: transparent;
-  color: var(--color-text-dark);
-  text-decoration: none;
-  padding: 14px 28px;
-  border: 1px solid #dcd7cd;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: var(--transition);
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-green);
 }
 
-.secondary-btn:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-  border-color: #c5beae;
-}
-
-/* Mini Cards Inferiores (Campo, Tecnologia, Futuro) */
-.hero-points {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  border-top: 1px solid #f0eae1;
-  padding-top: 32px;
-}
-
-.hero-point {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.hero-point strong {
-  font-size: 1.05rem;
-  color: var(--color-text-dark);
-}
-
-.hero-point span {
-  font-size: 0.88rem;
-  color: var(--color-text-muted);
-  line-height: 1.4;
-}
-
-/* --- COLUNA DIREITA: Bloco da Imagem --- */
-.hero-visual {
-  flex: 1;
-  display: flex;
-}
-
-.hero-image-card {
-  position: relative;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden; /* Garante que a imagem siga as bordas arredondadas */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.hero-image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta a imagem sem distorcer */
-  display: block;
-}
-
-/* Texto escuro flutuando sobre a imagem */
-.hero-image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 70%, transparent 100%);
-  padding: 40px 32px 32px 32px;
-  color: white;
-}
-
-.hero-image-overlay span {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.hero-image-overlay strong {
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.4;
-  display: block;
-}
-
-/* ==========================================================================
-   4. BOTÃO FIXO DE ACESSIBILIDADE
-   ========================================================================== */
-.accessibility-fixed {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  background-color: #386641;
-  color: white;
-  border: none;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 2000;
-}
-
-/* ==========================================================================
-   5. RESPONSIVIDADE (Para Celular e Telas Menores)
-   ========================================================================== */
-@media (max-width: 992px) {
-  .hero-shell {
-    flex-direction: column; /* Transforma as colunas em linhas no celular */
-  }
-  
-  .hero-points {
-    grid-template-columns: 1fr; /* Mini cards empilhados no mobile */
-    gap: 20px;
-  }
-  
-  .hero-copy {
-    padding: 32px 24px;
-  }
-  
-  .hero-image-card {
-    height: 400px; /* Define uma altura fixa para a imagem no mobile */
-  }
+.card h3 {
+    color: var(--neon-green);
+    margin-bottom: 1rem;
 }
