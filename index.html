@@ -1,38 +1,72 @@
-  <div class="site-title">Do Campo ao Copo: A Jornada do Malte em Guarapuava</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do Campo ao Copo: A Jornada do Malte em Guarapuava</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
 
-  <nav class="navbar" aria-label="Navegação principal">
-    <div class="nav-desktop">
-      <div class="nav-more">
-        <button class="nav-more-btn" id="nav-more-btn" type="button" aria-expanded="false" aria-controls="nav-more-panel">
-          <span>Explorar</span>
-          <span class="nav-more-arrow" aria-hidden="true">▾</span>
-        </button>
-        <div class="nav-more-panel" id="nav-more-panel" hidden>
-          <a href="#jornada">Jornada</a>
-          <a href="#galeria">Galeria</a>
-          <a href="#curiosidades">Curiosidades</a>
-          <a href="#quiz">Quiz</a>
-          <a href="#sustentabilidade">Sustentabilidade</a>
-          <a href="#video">Vídeo</a>
-          <a href="#hq">HQ</a>
-          <a href="#contato">Contato</a>
-        </div>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="./img/ProgramacaoParana_logo-vertical-mono-branca.png" alt="Logo" style="background:#0b3a2e; padding:5px; border-radius:4px;">
       </div>
+      <div class="site-title">Do Campo ao Copo: A Jornada do Malte em Guarapuava</div>
+
+      <nav class="navbar" aria-label="Navegação principal">
+        <div class="nav-desktop">
+          <div class="nav-more">
+            <button class="nav-more-btn" id="nav-more-btn" type="button" aria-expanded="false" aria-controls="nav-more-panel">
+              <span>Explorar</span>
+              <span class="nav-more-arrow" aria-hidden="true">▾</span>
+            </button>
+            <div class="nav-more-panel" id="nav-more-panel" hidden>
+              <a href="#jornada">Jornada</a>
+              <a href="#galeria">Galeria</a>
+              <a href="#curiosidades">Curiosidades</a>
+              <a href="#quiz">Quiz</a>
+              <a href="#sustentabilidade">Sustentabilidade</a>
+              <a href="#video">Vídeo</a>
+              <a href="#hq">HQ</a>
+              <a href="#contato">Contato</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="hamburger" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-links" aria-expanded="false">
+          ☰
+        </button>
+
+        <ul class="nav-links" id="nav-links" hidden>
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#curiosidades">Curiosidades</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+          <li><a href="#video">Vídeo</a></li>
+          <li><a href="#hq">HQ</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <button class="hamburger" id="menu-toggle" aria-label="Abrir menu" aria-controls="nav-links" aria-expanded="false">
-      ☰
-    </button>
-
-    <ul class="nav-links" id="nav-links" hidden>
-      <li><a href="#jornada">Jornada</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#curiosidades">Curiosidades</a></li>
-      <li><a href="#quiz">Quiz</a></li>
-      <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-      <li><a href="#video">Vídeo</a></li>
-      <li><a href="#hq">HQ</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</div>
+  <main>
+    
+    <section class="hero-section">
+      <div class="hero-shell">
+        <div class="hero-copy">
+          <span class="accessibility-badge" style="display:inline-block; background:#0b3a2e; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem; margin-bottom:1rem;">A+</span>
+          <h1>Do campo ao copo</h1>
+          <h2>Agro forte, futuro sustentável em cada etapa da jornada do malte</h2>
+          <p>
+            Da cevada cultivada no campo ao malte que movimenta a indústria e chega à cidade,
+            esta cadeia produtiva mostra como produção, tecnologia e cuidado ambiental podem caminhar juntos.
+          </p>
+          
+          <div class="hero-actions">
+            <a class="action-btn" href="#jornada" style="display:inline-block; background:#0b3a2e; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; margin-right:10px;">Conhecer a jornada</a>
+            <a class="secondary-btn" href="#sustentabilidade"
