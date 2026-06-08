@@ -3,144 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Agro Sustentável</title>
-    <style>
-        /* Estilos CSS */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f9f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #2e7d32;
-            border-bottom: 2px solid #a5d6a7;
-            padding-bottom: 10px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        /* Estilos da seção interativa (JavaScript) */
-        .interactive-section {
-            background-color: #e8f5e9;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #388e3c;
-        }
-
-        #dica-texto {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #1b5e20;
-            margin-top: 15px;
-            min-height: 30px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            color: #777;
-            font-size: 0.9rem;
-        }
-    </style>
+    <title>AgroSustentável | O Futuro da Agricultura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>O Futuro é Agro Sustentável</h1>
-        <p>Produzindo com respeito à natureza e às futuras gerações.</p>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-leaf"></i> Agro<span>Sustentável</span></a>
+            <nav class="nav-menu">
+                <a href="#sobre">Sobre</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#dashboard">Impacto</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#noticias">Notícias</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Alternar tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <div class="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>O que é a Agricultura Sustentável?</h2>
-            <p>A agricultura sustentável é a prática de cultivar alimentos e fibras de maneira que proteja o meio ambiente, promova a saúde pública e apoie as comunidades rurais. O objetivo é atender às necessidades do presente sem comprometer a capacidade das gerações futuras de atenderem às suas próprias necessidades.</p>
-        </section>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Cultivando um Amanhã Mais Verde</h1>
+            <p>A agricultura sustentável une tecnologia de ponta e respeito à natureza para alimentar o mundo sem esgotar o planeta.</p>
+            <a href="#sobre" class="btn-primary">Conheça Nossas Soluções</a>
+        </div>
+    </section>
 
-        <section>
-            <h2>Principais Pilares</h2>
-            <ul>
-                <li><strong>Preservação Ambiental:</strong> Redução do uso de agrotóxicos, conservação da água e proteção da biodiversidade.</li>
-                <li><strong>Viabilidade Econômica:</strong> Garantir que os agricultores tenham lucro e consigam manter seus negócios a longo prazo.</li>
-                <li><strong>Equidade Social:</strong> Condições de trabalho justas e seguras para os trabalhadores rurais e impacto positivo na comunidade local.</li>
-            </ul>
-        </section>
+    <section id="sobre" class="section sobre-section">
+        <div class="container">
+            <div class="grid-2">
+                <div class="sobre-text">
+                    <span class="section-subtitle">O Conceito</span>
+                    <h2>O que é Agricultura Sustentável?</h2>
+                    <p>É um modelo de produção que garante as necessidades alimentares do presente sem comprometer a capacidade das próximas gerações. Baseia-se em três pilares fundamentais: viabilidade econômica, justiça social e salvaguarda ambiental.</p>
+                    <p>Através de práticas conscientes, reduzimos a pegada de carbono, protegemos a biodiversidade e otimizamos o uso de recursos vitais como a água e o solo.</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="tip-box">
+                        <h3><i class="fa-solid fa-lightbulb"></i> Dica de Sustentabilidade</h3>
+                        <p id="tip-text">Clique no botão abaixo para receber uma dica prática de manejo sustentável!</p>
+                        <button id="new-tip-btn" class="btn-secondary">Nova Dica</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="interactive-section">
-            <h2>Descubra uma Prática Sustentável</h2>
-            <p>Clique no botão abaixo para gerar uma dica de como aplicar a sustentabilidade no campo.</p>
-            <button onclick="gerarDica()">Gerar Dica do Dia</button>
-            <p id="dica-texto"></p>
-        </section>
-    </main>
+    <section id="beneficios" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Vantagens</span>
+                <h2>Benefícios do Agro Sustentável</h2>
+            </div>
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-tree"></i></div>
+                    <h3>Preservação Ambiental</h3>
+                    <p>Proteção de biomas locais, manutenção da qualidade do solo e incentivo à biodiversidade nativa.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>Economia de Recursos</h3>
+                    <p>Redução drástica no desperdício de água e insumos através de monitoramento preciso.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                    <h3>Produção Sustentável</h3>
+                    <p>Alimentos mais saudáveis e livres de excesso de agroquímicos, valorizando o ciclo natural.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Impacto Social Positivo</h3>
+                    <p>Fortalecimento das comunidades rurais e garantia de condições justas de trabalho no campo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Portal Agro Sustentável. Desenvolvido para um futuro mais verde.</p>
+    <section id="tecnologias" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Inovação</span>
+                <h2>Tecnologia Aliada ao Campo</h2>
+            </div>
+            <div class="grid-4">
+                <div class="tech-card">
+                    <i class="fa-solid fa-sprinkler tech-icon"></i>
+                    <h3>Irrigação Inteligente</h3>
+                    <p>Sistemas gotejadores automatizados que aplicam a quantidade exata de água necessária.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fa-solid fa-solar-panel tech-icon"></i>
+                    <h3>Energia Solar Rural</h3>
+                    <p>Matriz energética limpa para alimentar bombas d'água, cercas e galpões operacionais.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fa-solid fa-location-crosshairs tech-icon"></i>
+                    <h3>Agricultura de Precisão</h3>
+                    <p>Uso de satélites e drones para mapear falhas e aplicar insumos apenas onde há necessidade.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fa-solid fa-network-wired tech-icon"></i>
+                    <h3>Sensores IoT</h3>
+                    <p>Dispositivos enterrados no solo que enviam dados em tempo real sobre umidade e nutrientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="section bg-dark text-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Métricas Reais</span>
+                <h2>Nosso Impacto em Números</h2>
+            </div>
+            
+            <div class="grid-3 dashboard-counters">
+                <div class="counter-box">
+                    <div class="counter-number" id="count-trees" data-target="15420">0</div>
+                    <div class="counter-label"><i class="fa-solid fa-tree"></i> Árvores Preservadas</div>
+                </div>
+                <div class="counter-box">
+                    <div class="counter-number" id="count-water" data-target="87400">0</div>
+                    <div class="counter-label"><i class="fa-solid fa-droplet"></i> m³ de Água Economizados</div>
+                </div>
+                <div class="counter-box">
+                    <div class="counter-number" id="count-co2" data-target="3210">0</div>
+                    <div class="counter-label"><i class="fa-solid fa-cloud"></i> Toneladas de CO₂ Reduzidas</div>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <h3>Evolução de Práticas Sustentáveis (Adoção %)</h3>
+                <div class="graph" id="evolution-graph">
+                    </div>
+                <div class="graph-labels" id="graph-labels">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="section">
+        <div class="container">
+            <div class="quiz-wrapper">
+                <div class="section-header">
+                    <span class="section-subtitle">Desafio</span>
+                    <h2>Teste Seus Conhecimentos</h2>
+                </div>
+                <div id="quiz-container">
+                    <div id="question-box">
+                        <h3 id="question-text">Carregando pergunta...</h3>
+                        <div id="options-container" class="options-grid"></div>
+                    </div>
+                    <div id="quiz-result" class="hidden">
+                        <h3>Parabéns!</h3>
+                        <p id="result-text"></p>
+                        <button id="restart-quiz-btn" class="btn-primary">Refazer Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="noticias" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Atualize-se</span>
+                <h2>Notícias e Artigos</h2>
+            </div>
+            <div class="grid-3">
+                <article class="news-card">
+                    <div class="news-img img-placeholder1"></div>
+                    <div class="news-content">
+                        <span class="news-date">08 Junho, 2026</span>
+                        <h3>O avanço dos bioinsumos no mercado brasileiro</h3>
+                        <p>Defensivos biológicos ganham espaço e reduzem a dependência de químicos tradicionais.</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img img-placeholder2"></div>
+                    <div class="news-content">
+                        <span class="news-date">02 Junho, 2026</span>
+                        <h3>Como pequenos produtores lucram com crédito de carbono</h3>
+                        <p>Programas de incentivo financeiro transformam florestas em pé em renda para a agricultura familiar.</p>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img img-placeholder3"></div>
+                    <div class="news-content">
+                        <span class="news-date">28 Maio, 2026</span>
+                        <h3>Sistemas Agroflorestais: a biodiversidade que produz comida</h3>
+                        <p>Entenda o conceito de plantar culturas agrícolas integradas a árvores nativas.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <h2>Entre em Contato Conosco</h2>
+                    <p>Tem dúvidas sobre como implementar tecnologias sustentáveis na sua propriedade ou quer fechar uma parceria? Escreva para nós!</p>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-envelope"></i> contato@agrosustentavel.com</p>
+                        <p><i class="fa-solid fa-phone"></i> (11) 99999-5555</p>
+                    </div>
+                </div>
+                <div>
+                    <form id="contact-form" class="form">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" required placeholder="Seu nome">
+                            <span class="error-msg" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" required placeholder="seu@email.com">
+                            <span class="error-msg" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+                            <span class="error-msg" id="message-error"></span>
+                        </div>
+                        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    </form>
+                    <div id="form-success" class="hidden success-box">
+                        <i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Agro<span>Sustentável</span></h3>
+                <p>Transformando a relação entre tecnologia, humanidade e produção de alimentos.</p>
+            </div>
+            <div>
+                <h4>Links Úteis</h4>
+                <ul class="footer-links">
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#dashboard">Métricas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <script>
-        // Array contendo várias dicas sustentáveis
-        const dicasAgro = [
-            "🌱 Faça a rotação de culturas para evitar o esgotamento dos nutrientes do solo.",
-            "💧 Utilize sistemas de irrigação por gotejamento para economizar até 50% de água.",
-            "🐞 Adote o controle biológico: use predadores naturais no lugar de pesticidas químicos.",
-            "♻️ Faça compostagem com resíduos orgânicos para criar um adubo rico e natural.",
-            "🌳 Implemente sistemas agroflorestais, integrando árvores, lavouras e animais no mesmo espaço.",
-            "☀️ Invista em energia solar para abastecer os equipamentos da fazenda."
-        ];
-
-        // Função que é ativada quando o botão é clicado
-        function gerarDica() {
-            // Escolhe um número aleatório baseado no tamanho da lista de dicas
-            const indiceAleatorio = Math.floor(Math.random() * dicasAgro.length);
-            
-            // Substitui o texto vazio pela dica sorteada
-            const elementoTexto = document.getElementById('dica-texto');
-            elementoTexto.innerText = dicasAgro[indiceAleatorio];
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
