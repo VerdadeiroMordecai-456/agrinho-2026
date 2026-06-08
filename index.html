@@ -3,74 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroTech | Sustentabilidade</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Portal Agro Sustentável</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #a5d6a7;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Estilos da seção interativa (JavaScript) */
+        .interactive-section {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        #dica-texto {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1b5e20;
+            margin-top: 15px;
+            min-height: 30px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">Agro<span>Tech</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Início</a></li>
-            <li><a href="#pilares">Pilares</a></li>
-            <li><a href="#dicas">Práticas</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <span class="badge">Inovação no Campo</span>
-            <h1>O Futuro do <span class="highlight">Agro Sustentável</span></h1>
-            <p>Aliando alta tecnologia à preservação ambiental para produzir mais, consumindo menos recursos.</p>
-            <a href="#dicas" class="btn-primary">Descobrir Práticas</a>
-        </div>
+    <header>
+        <h1>O Futuro é Agro Sustentável</h1>
+        <p>Produzindo com respeito à natureza e às futuras gerações.</p>
     </header>
 
     <main>
-        <section id="pilares" class="section-container">
-            <div class="section-header">
-                <h2>Pilares da Sustentabilidade</h2>
-                <p>Nossa fundação para um futuro mais verde.</p>
-            </div>
-            
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🌱</div>
-                    <h3>Preservação</h3>
-                    <p>Uso inteligente do solo, conservação hídrica e proteção total da biodiversidade nativa.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3>Eficiência</h3>
-                    <p>Implementação de agricultura de precisão para maximizar o rendimento e minimizar o desperdício.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🤝</div>
-                    <h3>Social</h3>
-                    <p>Desenvolvimento das comunidades locais e valorização do trabalhador rural com tecnologia.</p>
-                </div>
-            </div>
+        <section>
+            <h2>O que é a Agricultura Sustentável?</h2>
+            <p>A agricultura sustentável é a prática de cultivar alimentos e fibras de maneira que proteja o meio ambiente, promova a saúde pública e apoie as comunidades rurais. O objetivo é atender às necessidades do presente sem comprometer a capacidade das gerações futuras de atenderem às suas próprias necessidades.</p>
         </section>
 
-        <section id="dicas" class="section-container interactive-section">
-            <div class="interactive-card">
-                <h2>Gerador de Ações Sustentáveis</h2>
-                <p>Veja como a tecnologia pode ser aplicada na prática hoje mesmo.</p>
-                
-                <div class="dica-container">
-                    <p id="dica-texto">Clique no botão para gerar um insight.</p>
-                </div>
-                
-                <button id="btn-dica" class="btn-glow">Gerar Insight 🌱</button>
-            </div>
+        <section>
+            <h2>Principais Pilares</h2>
+            <ul>
+                <li><strong>Preservação Ambiental:</strong> Redução do uso de agrotóxicos, conservação da água e proteção da biodiversidade.</li>
+                <li><strong>Viabilidade Econômica:</strong> Garantir que os agricultores tenham lucro e consigam manter seus negócios a longo prazo.</li>
+                <li><strong>Equidade Social:</strong> Condições de trabalho justas e seguras para os trabalhadores rurais e impacto positivo na comunidade local.</li>
+            </ul>
+        </section>
+
+        <section class="interactive-section">
+            <h2>Descubra uma Prática Sustentável</h2>
+            <p>Clique no botão abaixo para gerar uma dica de como aplicar a sustentabilidade no campo.</p>
+            <button onclick="gerarDica()">Gerar Dica do Dia</button>
+            <p id="dica-texto"></p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 AgroTech Sustentável. Inovando a raiz do amanhã.</p>
+        <p>&copy; 2026 Portal Agro Sustentável. Desenvolvido para um futuro mais verde.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Array contendo várias dicas sustentáveis
+        const dicasAgro = [
+            "🌱 Faça a rotação de culturas para evitar o esgotamento dos nutrientes do solo.",
+            "💧 Utilize sistemas de irrigação por gotejamento para economizar até 50% de água.",
+            "🐞 Adote o controle biológico: use predadores naturais no lugar de pesticidas químicos.",
+            "♻️ Faça compostagem com resíduos orgânicos para criar um adubo rico e natural.",
+            "🌳 Implemente sistemas agroflorestais, integrando árvores, lavouras e animais no mesmo espaço.",
+            "☀️ Invista em energia solar para abastecer os equipamentos da fazenda."
+        ];
+
+        // Função que é ativada quando o botão é clicado
+        function gerarDica() {
+            // Escolhe um número aleatório baseado no tamanho da lista de dicas
+            const indiceAleatorio = Math.floor(Math.random() * dicasAgro.length);
+            
+            // Substitui o texto vazio pela dica sorteada
+            const elementoTexto = document.getElementById('dica-texto');
+            elementoTexto.innerText = dicasAgro[indiceAleatorio];
+        }
+    </script>
+
 </body>
 </html>
